@@ -104,26 +104,31 @@
 							{
 								"weight" : 20,
 								"add" : {
+									"component_groups" : ["minecraft:health_0"]
 								}
 							},
 							{
 								"weight" : 20,
 								"add" : {
+									"component_groups" : ["minecraft:health_1"]
 								}
 							},
 							{
 								"weight" : 20,
 								"add" : {
+									"component_groups" : ["minecraft:health_2"]
 								}
 							},
 							{
 								"weight" : 20,
 								"add" : {
+									"component_groups" : ["minecraft:health_3"]
 								}
 							},
 							{
 								"weight" : 20,
 								"add" : {
+									"component_groups" : ["minecraft:health_4"]
 								}
 							}
 						]
@@ -133,36 +138,43 @@
 							{
 								"weight" : 14.3,
 								"add" : {
+									"component_groups" : ["minecraft:scale_0"]
 								}
 							},
 							{
 								"weight" : 14.3,
 								"add" : {
+									"component_groups" : ["minecraft:scale_1"]
 								}
 							},
 							{
 								"weight" : 14.3,
 								"add" : {
+									"component_groups" : ["minecraft:scale_2"]
 								}
 							},
 							{
 								"weight" : 14.3,
 								"add" : {
+									"component_groups" : ["minecraft:scale_3"]
 								}
 							},
 							{
 								"weight" : 14.3,
 								"add" : {
+									"component_groups" : ["minecraft:scale_4"]
 								}
 							},
 							{
 								"weight" : 14.3,
 								"add" : {
+									"component_groups" : ["minecraft:scale_5"]
 								}
 							},
 							{
 								"weight" : 14.2,
 								"add" : {
+									"component_groups" : ["minecraft:scale_6"]
 								}
 							}
 						]
