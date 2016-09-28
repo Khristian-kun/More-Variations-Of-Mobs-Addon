@@ -2,7 +2,77 @@
 	"minecraft:entity" : {
 		"version" : 0.1,
 
-		"component_groups" : {},
+		"component_groups" : {
+		
+			//health variation
+			"minecraft:health_0" : {
+				"minecraft:health" : {
+					"value" : 4,
+					"max" : 4
+				}
+			},
+			"minecraft:health_1" : {
+				"minecraft:health" : {
+					"value" : 5,
+					"max" : 5
+				}
+			},
+			"minecraft:health_2" : {
+				"minecraft:health" : {
+					"value" : 6,
+					"max" : 6
+				}
+			},
+			"minecraft:health_3" : {
+				"minecraft:health" : {
+					"value" : 7,
+					"max" : 7
+				}
+			},
+			"minecraft:health_4" : {
+				"minecraft:health" : {
+					"value" : 8,
+					"max" : 8
+				}
+			},
+			
+			//scale variation
+			"minecraft:scale_0" : {
+				"minecraft:scale" : {
+					"value" : 0.7
+				}
+			},
+			"minecraft:scale_1" : {
+				"minecraft:scale" : {
+					"value" : 0.8
+				}
+			},
+			"minecraft:scale_2" : {
+				"minecraft:scale" : {
+					"value" : 0.8
+				}
+			},
+			"minecraft:scale_3" : {
+				"minecraft:scale" : {
+					"value" : 0.9
+				}
+			},
+			"minecraft:scale_4" : {
+				"minecraft:scale" : {
+					"value" : 1.0
+				}
+			},
+			"minecraft:scale_5" : {
+				"minecraft:scale" : {
+					"value" : 1.1
+				}
+			},
+			"minecraft:scale_6" : {
+				"minecraft:scale" : {
+					"value" : 1.2
+				}
+			}
+		},
 
 		"components" : {
 			"minecraft:identifier" : {
@@ -23,13 +93,82 @@
 				"value" : 0.1,
 				"max" : 0.1
 			},
-			"minecraft:health" : {
-				"value" : 6,
-				"max" : 6
-			},
 			"minecraft:nameable" : {}
 		},
 
-		"events" : {}
+		"events" : {
+			"minecraft:entity_spawned" : {
+				"sequence" : [
+					{
+						"randomize" : [
+							{
+								"weight" : 20,
+								"add" : {
+								}
+							},
+							{
+								"weight" : 20,
+								"add" : {
+								}
+							},
+							{
+								"weight" : 20,
+								"add" : {
+								}
+							},
+							{
+								"weight" : 20,
+								"add" : {
+								}
+							},
+							{
+								"weight" : 20,
+								"add" : {
+								}
+							}
+						]
+					},
+					{
+						"randomize" : [
+							{
+								"weight" : 14.3,
+								"add" : {
+								}
+							},
+							{
+								"weight" : 14.3,
+								"add" : {
+								}
+							},
+							{
+								"weight" : 14.3,
+								"add" : {
+								}
+							},
+							{
+								"weight" : 14.3,
+								"add" : {
+								}
+							},
+							{
+								"weight" : 14.3,
+								"add" : {
+								}
+							},
+							{
+								"weight" : 14.3,
+								"add" : {
+								}
+							},
+							{
+								"weight" : 14.2,
+								"add" : {
+								}
+							}
+						]
+					}
+				]
+			}
+		}
 	}
 }
