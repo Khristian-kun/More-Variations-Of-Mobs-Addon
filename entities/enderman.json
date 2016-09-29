@@ -35,6 +35,75 @@
 					"speed_multiplier" : 1.0,
 					"track_target" : false
 				}
+			},
+			
+			//health variation
+			"minecraft:health_0" : {
+				"minecraft:health" : {
+					"value" : 32,
+					"max" : 32
+				}
+			},
+			"minecraft:health_1" : {
+				"minecraft:health" : {
+					"value" : 36,
+					"max" : 36
+				}
+			},
+			"minecraft:health_2" : {
+				"minecraft:health" : {
+					"value" : 40,
+					"max" : 40
+				}
+			},
+			"minecraft:health_3" : {
+				"minecraft:health" : {
+					"value" : 44,
+					"max" : 44
+				}
+			},
+			"minecraft:health_4" : {
+				"minecraft:health" : {
+					"value" : 48,
+					"max" : 48
+				}
+			},
+			
+			//scale variation
+			"minecraft:scale_0" : {
+				"minecraft:scale" : {
+					"value" : 0.7
+				}
+			},
+			"minecraft:scale_1" : {
+				"minecraft:scale" : {
+					"value" : 0.8
+				}
+			},
+			"minecraft:scale_2" : {
+				"minecraft:scale" : {
+					"value" : 0.8
+				}
+			},
+			"minecraft:scale_3" : {
+				"minecraft:scale" : {
+					"value" : 0.9
+				}
+			},
+			"minecraft:scale_4" : {
+				"minecraft:scale" : {
+					"value" : 1.0
+				}
+			},
+			"minecraft:scale_5" : {
+				"minecraft:scale" : {
+					"value" : 1.1
+				}
+			},
+			"minecraft:scale_6" : {
+				"minecraft:scale" : {
+					"value" : 1.2
+				}
 			}
 		},
 
@@ -48,10 +117,6 @@
 			"minecraft:nameable" : {},
 			"minecraft:loot" : {
 				"table" : "loot_tables/entities/enderman.json"
-			},
-			"minecraft:health" : {
-				"value" : 40,
-				"max" : 40
 			},
 			"minecraft:attack" : {
 				"damage" : 7
@@ -96,12 +161,95 @@
 
 		"events" : {
 			"minecraft:entity_spawned" : {
-				"remove" : {},
-				"add" : {
-					"component_groups" : [
-						"minecraft:enderman_calm"
-					]
-				}
+				"sequence" : [
+					{
+						"add" : {
+							"component_groups" : [
+								"minecraft:enderman_calm"
+							]
+						}
+					},
+					{
+						"randomize" : [
+							{
+								"weight" : 20,
+								"add" : {
+									"component_groups" : ["minecraft:health_0"]
+								}
+							},
+							{
+								"weight" : 20,
+								"add" : {
+									"component_groups" : ["minecraft:health_1"]
+								}
+							},
+							{
+								"weight" : 20,
+								"add" : {
+									"component_groups" : ["minecraft:health_2"]
+								}
+							},
+							{
+								"weight" : 20,
+								"add" : {
+									"component_groups" : ["minecraft:health_3"]
+								}
+							},
+							{
+								"weight" : 20,
+								"add" : {
+									"component_groups" : ["minecraft:health_4"]
+								}
+							}
+						]
+					},
+					{
+						"randomize" : [
+							{
+								"weight" : 14.3,
+								"add" : {
+									"component_groups" : ["minecraft:scale_0"]
+								}
+							},
+							{
+								"weight" : 14.3,
+								"add" : {
+									"component_groups" : ["minecraft:scale_1"]
+								}
+							},
+							{
+								"weight" : 14.3,
+								"add" : {
+									"component_groups" : ["minecraft:scale_2"]
+								}
+							},
+							{
+								"weight" : 14.3,
+								"add" : {
+									"component_groups" : ["minecraft:scale_3"]
+								}
+							},
+							{
+								"weight" : 14.3,
+								"add" : {
+									"component_groups" : ["minecraft:scale_4"]
+								}
+							},
+							{
+								"weight" : 14.3,
+								"add" : {
+									"component_groups" : ["minecraft:scale_5"]
+								}
+							},
+							{
+								"weight" : 14.2,
+								"add" : {
+									"component_groups" : ["minecraft:scale_6"]
+								}
+							}
+						]
+					}
+				]
 			},
 			"minecraft:become_angry" : {
 				"remove" : {
