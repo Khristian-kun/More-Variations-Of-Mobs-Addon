@@ -25,6 +25,18 @@
 						"event" : "minecraft:stop_charged_swell",
 						"target" : "self"
 					}
+				},
+				"minecraft:interact" : { //charged creeper should make the explosion of charged creeper #blameMojag
+					"on_interact" : {
+						"filters" : {
+							"sender_with_item" : "flint_and_steel:0",
+							"sender_with_families" : "player"
+						},
+						"event" : "minecraft:start_charged_swell",
+						"target" : "self"
+					},
+					"swing" : true,
+					"interact_text" : "action.interact.creeper"
 				}
 			},
 			"minecraft:charged_exploding" : {
@@ -33,6 +45,75 @@
 					"fuseLit" : true,
 					"power" : 6,
 					"causesFire" : false
+				}
+			},
+			
+			//health variation
+			"minecraft:health_0" : {
+				"minecraft:health" : {
+					"value" : 16,
+					"max" : 16
+				}
+			},
+			"minecraft:health_1" : {
+				"minecraft:health" : {
+					"value" : 18,
+					"max" : 18
+				}
+			},
+			"minecraft:health_2" : {
+				"minecraft:health" : {
+					"value" : 20,
+					"max" : 20
+				}
+			},
+			"minecraft:health_3" : {
+				"minecraft:health" : {
+					"value" : 22,
+					"max" : 22
+				}
+			},
+			"minecraft:health_4" : {
+				"minecraft:health" : {
+					"value" : 24,
+					"max" : 24
+				}
+			},
+			
+			//scale variation
+			"minecraft:scale_0" : {
+				"minecraft:scale" : {
+					"value" : 0.7
+				}
+			},
+			"minecraft:scale_1" : {
+				"minecraft:scale" : {
+					"value" : 0.8
+				}
+			},
+			"minecraft:scale_2" : {
+				"minecraft:scale" : {
+					"value" : 0.8
+				}
+			},
+			"minecraft:scale_3" : {
+				"minecraft:scale" : {
+					"value" : 0.9
+				}
+			},
+			"minecraft:scale_4" : {
+				"minecraft:scale" : {
+					"value" : 1.0
+				}
+			},
+			"minecraft:scale_5" : {
+				"minecraft:scale" : {
+					"value" : 1.1
+				}
+			},
+			"minecraft:scale_6" : {
+				"minecraft:scale" : {
+					"value" : 1.2
 				}
 			}
 		},
@@ -59,11 +140,6 @@
 			"minecraft:loot" : {
 				"table" : "loot_tables/entities/creeper.json"
 			},
-
-			"minecraft:health" : {
-				"value" : 20,
-				"max" : 20
-			},
 			"minecraft:attack" : {
 				"damage" : 3
 			},
@@ -81,7 +157,7 @@
 
 			"minecraft:target_nearby_sensor" : {
 				"inside_range" : 5,
-				"outside_range" : 10,
+				"outside_range" : 7, //it shouldn't be 10
 				"on_inside_range" : {
 					"event" : "minecraft:start_swell",
 					"target" : "self"
@@ -211,6 +287,90 @@
 						"minecraft:charged_creeper"
 					]
 				}
+			},
+			"minecraft:entity_spawned" : {
+				"sequence" : [
+					{
+						"randomize" : [
+							{
+								"weight" : 20,
+								"add" : {
+									"component_groups" : ["minecraft:health_0"]
+								}
+							},
+							{
+								"weight" : 20,
+								"add" : {
+									"component_groups" : ["minecraft:health_1"]
+								}
+							},
+							{
+								"weight" : 20,
+								"add" : {
+									"component_groups" : ["minecraft:health_2"]
+								}
+							},
+							{
+								"weight" : 20,
+								"add" : {
+									"component_groups" : ["minecraft:health_3"]
+								}
+							},
+							{
+								"weight" : 20,
+								"add" : {
+									"component_groups" : ["minecraft:health_4"]
+								}
+							}
+						]
+					},
+					{
+						"randomize" : [
+							{
+								"weight" : 14.3,
+								"add" : {
+									"component_groups" : ["minecraft:scale_0"]
+								}
+							},
+							{
+								"weight" : 14.3,
+								"add" : {
+									"component_groups" : ["minecraft:scale_1"]
+								}
+							},
+							{
+								"weight" : 14.3,
+								"add" : {
+									"component_groups" : ["minecraft:scale_2"]
+								}
+							},
+							{
+								"weight" : 14.3,
+								"add" : {
+									"component_groups" : ["minecraft:scale_3"]
+								}
+							},
+							{
+								"weight" : 14.3,
+								"add" : {
+									"component_groups" : ["minecraft:scale_4"]
+								}
+							},
+							{
+								"weight" : 14.3,
+								"add" : {
+									"component_groups" : ["minecraft:scale_5"]
+								}
+							},
+							{
+								"weight" : 14.2,
+								"add" : {
+									"component_groups" : ["minecraft:scale_6"]
+								}
+							}
+						]
+					}
+				]
 			}
 		}
 	}

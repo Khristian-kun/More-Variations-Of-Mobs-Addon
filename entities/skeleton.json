@@ -28,7 +28,7 @@
 					"track_target" : true
 				},
 				"minecraft:equipment" : {
-					"table" : "loot_tables/entities/skeleton_2_gear.json" //stone sword an armors
+					"table" : "loot_tables/entities/skeleton_2_gear.json" //stone sword and armors
 				},
 				"minecraft:loot" : {
 					"table" : "loot_tables/entities/skeleton_2.json" //bone and stone sword
