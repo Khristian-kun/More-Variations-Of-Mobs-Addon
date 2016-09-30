@@ -3,6 +3,12 @@
 		"version" : 0.1,
 
 		"component_groups" :{
+			"minecraft:health_0" : {
+				"minecraft:health" : {
+					"value" : 22,
+					"max" : 22
+				}
+			},
 			"minecraft:health_1" : {
 				"minecraft:health" : {
 					"value" : 24,
