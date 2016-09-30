@@ -2,6 +2,70 @@
 	"minecraft:entity" : {
 		"version" : 0.1,
 
+		"component_groups" :{
+			"minecraft:health_1" : {
+				"minecraft:health" : {
+					"value" : 24,
+					"max" : 24
+				}
+			},
+			"minecraft:health_2" : {
+				"minecraft:health" : {
+					"value" : 26,
+					"max" : 26
+				}
+			},
+			"minecraft:health_3" : {
+				"minecraft:health" : {
+					"value" : 28,
+					"max" : 28
+				}
+			},
+			"minecraft:health_4" : {
+				"minecraft:health" : {
+					"value" : 30,
+					"max" : 30
+				}
+			},
+			
+			//scale variation
+			"minecraft:scale_0" : {
+				"minecraft:scale" : {
+					"value" : 0.7
+				}
+			},
+			"minecraft:scale_1" : {
+				"minecraft:scale" : {
+					"value" : 0.8
+				}
+			},
+			"minecraft:scale_2" : {
+				"minecraft:scale" : {
+					"value" : 0.8
+				}
+			},
+			"minecraft:scale_3" : {
+				"minecraft:scale" : {
+					"value" : 0.9
+				}
+			},
+			"minecraft:scale_4" : {
+				"minecraft:scale" : {
+					"value" : 1.0
+				}
+			},
+			"minecraft:scale_5" : {
+				"minecraft:scale" : {
+					"value" : 1.1
+				}
+			},
+			"minecraft:scale_6" : {
+				"minecraft:scale" : {
+					"value" : 1.2
+				}
+			}
+		},
+		
 		"components" : {
 			"minecraft:identifier" : {
 				"id" : "minecraft:witch"
@@ -11,10 +75,6 @@
 				"table" : "loot_tables/entities/witch.json"
 			},
 
-			"minecraft:health" : {
-				"value" : 26,
-				"max" : 26
-			},
 			"minecraft:movement" : {
 				"value" : 0.25
 			},
@@ -56,6 +116,92 @@
 			},
 			"minecraft:type_family" : {
 				"family" : ["witch", "monster"]
+			}
+		},
+		"events" : {
+			"minecraft:entity_spawned" : {
+				"sequence" : [
+					{
+						"randomize" : [
+							{
+								"weight" : 20,
+								"add" : {
+									"component_groups" : ["minecraft:health_0"]
+								}
+							},
+							{
+								"weight" : 20,
+								"add" : {
+									"component_groups" : ["minecraft:health_1"]
+								}
+							},
+							{
+								"weight" : 20,
+								"add" : {
+									"component_groups" : ["minecraft:health_2"]
+								}
+							},
+							{
+								"weight" : 20,
+								"add" : {
+									"component_groups" : ["minecraft:health_3"]
+								}
+							},
+							{
+								"weight" : 20,
+								"add" : {
+									"component_groups" : ["minecraft:health_4"]
+								}
+							}
+						]
+					},
+					{
+						"randomize" : [
+							{
+								"weight" : 14.3,
+								"add" : {
+									"component_groups" : ["minecraft:scale_0"]
+								}
+							},
+							{
+								"weight" : 14.3,
+								"add" : {
+									"component_groups" : ["minecraft:scale_1"]
+								}
+							},
+							{
+								"weight" : 14.3,
+								"add" : {
+									"component_groups" : ["minecraft:scale_2"]
+								}
+							},
+							{
+								"weight" : 14.3,
+								"add" : {
+									"component_groups" : ["minecraft:scale_3"]
+								}
+							},
+							{
+								"weight" : 14.3,
+								"add" : {
+									"component_groups" : ["minecraft:scale_4"]
+								}
+							},
+							{
+								"weight" : 14.3,
+								"add" : {
+									"component_groups" : ["minecraft:scale_5"]
+								}
+							},
+							{
+								"weight" : 14.2,
+								"add" : {
+									"component_groups" : ["minecraft:scale_6"]
+								}
+							}
+						]
+					}
+				]
 			}
 		}
 	}
