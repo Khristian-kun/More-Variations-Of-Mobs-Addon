@@ -200,10 +200,6 @@
 				"width" : 0.7,
 				"height" : 0.5
 			},
-			"minecraft:health" : {
-				"value" : 12,
-				"max" : 12
-			},
 			"minecraft:movement" : {
 				"value" : 0.3
 			},
