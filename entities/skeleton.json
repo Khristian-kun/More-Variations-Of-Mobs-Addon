@@ -36,6 +36,138 @@
 				"minecraft:attack" : {
 					"damage" : 2
 				}
+			},
+			"minecraft:unarmed" : {
+				"minecraft:behavior.melee_attack" : {
+					"priority" : 4,
+					"target_dist" : 1.2,
+					"speed_multiplier" : 1.0,
+					"track_target" : true
+				},
+				"minecraft:loot" : {
+					"table" : "loot_tables/entities/skeleton_1.json" //only bone
+				},
+				"minecraft:attack" : {
+					"damage" : 2
+				},
+				"minecraft:behavior.break_door" : {
+					"priority" : 3
+				}
+			},
+			
+			//health variation
+			"minecraft:health_0" : {
+				"minecraft:health" : {
+					"value" : 16,
+					"max" : 16
+				}
+			},
+			"minecraft:health_1" : {
+				"minecraft:health" : {
+					"value" : 18,
+					"max" : 18
+				}
+			},
+			"minecraft:health_2" : {
+				"minecraft:health" : {
+					"value" : 20,
+					"max" : 20
+				}
+			},
+			"minecraft:health_3" : {
+				"minecraft:health" : {
+					"value" : 22,
+					"max" : 22
+				}
+			},
+			"minecraft:health_4" : {
+				"minecraft:health" : {
+					"value" : 24,
+					"max" : 24
+				}
+			},
+			
+			//scale variation
+			"minecraft:scale_0" : {
+				"minecraft:scale" : {
+					"value" : 0.7
+				}
+			},
+			"minecraft:scale_1" : {
+				"minecraft:scale" : {
+					"value" : 0.8
+				}
+			},
+			"minecraft:scale_2" : {
+				"minecraft:scale" : {
+					"value" : 0.8
+				}
+			},
+			"minecraft:scale_3" : {
+				"minecraft:scale" : {
+					"value" : 0.9
+				}
+			},
+			"minecraft:scale_4" : {
+				"minecraft:scale" : {
+					"value" : 1.0
+				}
+			},
+			"minecraft:scale_5" : {
+				"minecraft:scale" : {
+					"value" : 1.1
+				}
+			},
+			"minecraft:scale_6" : {
+				"minecraft:scale" : {
+					"value" : 1.2
+				}
+			},
+			
+			//targets
+			"minecraft:target_Player" : {
+				"minecraft:behavior.nearest_attackable_target" : {
+					"priority" : 2,
+					"entity_types" : [{
+							"entity_filter" : ["player"],
+							"max_dist" : 16,
+							"must_see" : true
+						}
+					]
+				}
+			},
+			"minecraft:target_Villager" : {
+				"minecraft:behavior.nearest_attackable_target" : {
+					"priority" : 2,
+					"entity_types" : [{
+							"entity_filter" : ["villager"],
+							"max_dist" : 16,
+							"must_see" : true
+						}
+					]
+				}
+			},
+			"minecraft:target_Moster" : {
+				"minecraft:behavior.nearest_attackable_target" : {
+					"priority" : 2,
+					"entity_types" : [{
+							"entity_filter" : ["monster"],
+							"max_dist" : 16,
+							"must_see" : true
+						}
+					]
+				}
+			},
+			"minecraft:target_Animal" : {
+				"minecraft:behavior.nearest_attackable_target" : {
+					"priority" : 2,
+					"entity_types" : [{
+							"entity_filter" : ["pig", "sheep", "cow"],
+							"max_dist" : 16,
+							"must_see" : true
+						}
+					]
+				}
 			}
 		},
 		
@@ -53,10 +185,6 @@
 
 			"minecraft:burns_in_daylight" : {},
 
-			"minecraft:health" : {
-				"value" : 20,
-				"max" : 20
-			},
 			"minecraft:movement" : {
 				"value" : 0.25,
 				"max" : 0.25
@@ -70,15 +198,6 @@
 			},
 			"minecraft:behavior.hurt_by_target" : {
 				"priority" : 1
-			},
-			"minecraft:behavior.nearest_attackable_target" : {
-				"priority" : 2,
-				"entity_types" : [{
-						"entity_filter" : ["player"],
-						"max_dist" : 16,
-						"must_see" : true
-					}
-				]
 			},
 			"minecraft:behavior.flee_sun" : {
 				"priority" : 2,
@@ -103,15 +222,129 @@
 					{
 						"randomize" : [
 							{
-								"weight" : 50,
+								"weight" : 34,
 								"add" : {
 									"component_groups" : ["minecraft:archer"]
 								}
 							},
 							{
-								"weight" : 50,
+								"weight" : 33,
 								"add" : {
 									"component_groups" : ["minecraft:melee_sword"]
+								}
+							},
+							{
+								"weight" : 33,
+								"add" : {
+									"component_groups" : ["minecraft:unarmed"]
+								}
+							}
+						]
+					},
+					{
+						"randomize" : [
+							{
+								"weight" : 20,
+								"add" : {
+									"component_groups" : ["minecraft:health_0"]
+								}
+							},
+							{
+								"weight" : 20,
+								"add" : {
+									"component_groups" : ["minecraft:health_1"]
+								}
+							},
+							{
+								"weight" : 20,
+								"add" : {
+									"component_groups" : ["minecraft:health_2"]
+								}
+							},
+							{
+								"weight" : 20,
+								"add" : {
+									"component_groups" : ["minecraft:health_3"]
+								}
+							},
+							{
+								"weight" : 20,
+								"add" : {
+									"component_groups" : ["minecraft:health_4"]
+								}
+							}
+						]
+					},
+					{
+						"randomize" : [
+							{
+								"weight" : 14.3,
+								"add" : {
+									"component_groups" : ["minecraft:scale_0"]
+								}
+							},
+							{
+								"weight" : 14.3,
+								"add" : {
+									"component_groups" : ["minecraft:scale_1"]
+								}
+							},
+							{
+								"weight" : 14.3,
+								"add" : {
+									"component_groups" : ["minecraft:scale_2"]
+								}
+							},
+							{
+								"weight" : 14.3,
+								"add" : {
+									"component_groups" : ["minecraft:scale_3"]
+								}
+							},
+							{
+								"weight" : 14.3,
+								"add" : {
+									"component_groups" : ["minecraft:scale_4"]
+								}
+							},
+							{
+								"weight" : 14.3,
+								"add" : {
+									"component_groups" : ["minecraft:scale_5"]
+								}
+							},
+							{
+								"weight" : 14.2,
+								"add" : {
+									"component_groups" : ["minecraft:scale_6"]
+								}
+							}
+						]
+					},
+					{
+						"randomize" : [
+							{
+								"weight" : 60,
+								"add" : {
+									"component_groups" : ["minecraft:target_Player"]
+								}
+							},
+							{
+								"weight" : 14,
+								"add" : {
+									"component_groups" : ["minecraft:target_Villager"]
+								}
+							},
+							{
+								"weight" : 14,
+								"add" : {
+									"component_groups" : ["minecraft:target_Moster"]
+								}
+							},
+							{
+								"weight" : 12,
+								"add" : {
+									"component_groups" : ["minecraft:target_Animal"]
 								}
 							}
 						]
